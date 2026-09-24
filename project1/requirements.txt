@@ -1,0 +1,18 @@
+# CS676 Project 1 dependencies.
+#
+# This file is the FALLBACK for pip users, and what Hugging Face reads when you
+# deploy. The project itself is managed by uv — `uv sync` installs from
+# pyproject.toml and uv.lock, which pin exact versions. Keep the two in step.
+#
+#   uv sync                          # preferred
+#   pip install -r requirements.txt  # fallback
+#
+# anthropic must be >= 0.120 — earlier releases do not accept the
+# `output_config` parameter that credibility.py uses for structured output.
+anthropic>=0.120.0
+streamlit>=1.50.0
+python-dotenv>=1.1.1
+
+# Optional. The app runs without these; the sidebar shows which are active.
+google-search-results>=2.4.2   # SerpAPI, provides `from serpapi import GoogleSearch`
+langfuse>=3.6.1                # tracing
